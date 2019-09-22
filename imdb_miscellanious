@@ -1,0 +1,70 @@
+s32imdbpy.py /path/to/the/tsv.gz/files/ URI
+
+s32imdbpy.py ~/Download/imdb-s3-dataset-2018-02-07/ \
+postgres://user:password@localhost/imdb
+ 
+from imdb import IMDb
+ia = IMDb('s3', 'postgres://user:password@localhost/imdb')
+results = ia.search_movie('the matrix') for result in results:
+print(result.movieID, result)
+matrix = results[0] ia.update(matrix) print(matrix.keys())
+
+-c /path/to/empty/dir
+
+
+-d C:/path/to/imdb_files/ -c C:/path/to/csv_tmp_files/
+
+character-set-server   = utf8
+default-collation      = utf8_unicode_ci
+default-character-set  = utf8
+
+imdbpy2sql.py -d /dir/with/plainTextDataFiles/ -u URI \
+-c /path/to/the/csv_files_dir/
+ 
+python -m venv ~/.virtualenvs/imdbpy
+. ~/.virtualenvs/imdbpy/bin/activate
+
+
+pip install -e .[dev,doc,test]
+
+if accessSystem == 'mysql':
+from parser.mysql import IMDbMysqlAccessSystem return IMDbMysqlAccessSystem(*arguments, **keywords)
+
+from imdb import IMDb
+i = IMDb(accessSystem='mysql')
+results = i.search_movie('title') print(results)
+
+from imdb import IMDb
+i = IMDb(accessSystem='http') # the 'accessSystem' argument is not
+                              # really needed, since "http" is the default.
+i.set_proxy('http://localhost:8080/')
+
+ i = IMDb(accessSystem='http')
+ print(i.get_special_methods())
+ 
+ {'method_name': 'method_description', ...}
+
+pytest
+
+pytest tests/test_http_movie_combined.py
+
+pytest -k cover
+
+tox
+
+tox -e py34
+
+
+tox -e pypy3 -- pytest -k cover
+
+
+tox -e py35 -- python
+
+
+IMDBPY_S3_URI='postgres://imdb@localhost/imdb' pytest
+
+msgmerge -N imdbpy-fr.po imdbpy.pot > new-imdbpy-fr.po
+
+ [egg_info]
+tag_build = dev
+tag_date = true
