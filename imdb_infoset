@@ -1,0 +1,66 @@
+from imdb import IMDb
+ia = IMDb()
+
+ia.get_movie_infoset()
+
+ia.get_person_infoset()
+
+ia.get_company_infoset() ['main']
+
+from imdb.Person import Person
+Person.default_info
+
+movie = ia.get_movie('id')
+movie.current_info
+
+movie = ia.get_movie('id')
+movie.infoset2keys
+movie = ia.get_movie('', info=['taglines', 'plot'])
+movie.infoset2keys
+movie.get('title')
+movie.get('taglines')[0]
+movie.get('taglines')[1]
+movie.get('taglines')[2]
+movie.get('taglines')[3]
+movie.get('taglines')[4]
+movie.get('taglines')[5]
+movie.get('taglines')[6]
+
+movie.current_info
+movie['median']
+
+ia.update(movie, info=['plot'])
+movie.current_info
+
+movie = ia.get_movie('id')
+plot = movie['plot'][0]
+plot
+
+movie = ia.get_movie('id')
+actor = movie['cast'][0]
+actor['name']
+actor.currentRole
+
+actor = movie['cast'][1]
+actor['name']
+actor.currentRole
+
+actor = movie['cast'][2]
+actor['name']
+actor.currentRole
+
+actor = movie['cast'][3]
+actor['name']
+actor.currentRole
+
+actor = movie['cast'][4]
+actor['name']
+actor.currentRole
+
+actor = movie['cast'][5]
+actor['name']
+actor.currentRole
+
+actor = movie['cast'][6]
+actor['name']
+actor.currentRole
