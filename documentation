@@ -1,0 +1,19 @@
+from imdb import IMDb
+ia = imdb.IMDb()
+movies = ia.search_movie('title')
+movies[0]
+
+movie = ia.get_movie('id')
+movie.current_info
+
+['taglines', 'vote details']
+movie['median']
+
+movie['plot'][0]
+plot
+
+movie = ia.get_movie('id', info=['taglines', 'plot'])
+
+movie.infoset2keys
+
+movie.get('taglines')[0]
