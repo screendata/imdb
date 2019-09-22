@@ -1,0 +1,29 @@
+pip install git+https://github.com/alberanid/imdbpy
+pip install imdbpy
+
+from imdb import IMDb
+import imdb
+
+ia = IMDb()
+ia = imdb.IMDb()
+
+movies = ia.search_movie('matrix')
+
+movies[0].movieID
+
+movies[0]['title']
+
+people = ia.search_person('')
+people[0]
+people[0].personID
+
+person = ia.get_person(people[0].personID)
+person['name']
+person['birth date']
+
+keywords = ia.search_keyword('')
+keywords
+
+movies = ia.get_keyword('')
+len(movies)
+movies[0]
